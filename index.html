@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Schema Markup Generator: JSON-LD for LocalBusiness, Article, Product and FAQ</title>
+<meta name="description" content="Free, private schema markup generator. Fill in a form, get validated JSON-LD for LocalBusiness, Article, Product and FAQPage, with a live search preview.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#form">Skip to the form</a>
+<header class="top">
+  <div>
+    <h1>Schema markup generator</h1>
+    <p>Fill in the form and copy valid JSON-LD for your page. Everything runs in your browser; nothing is uploaded.</p>
+  </div>
+  <svg class="mark" viewBox="0 0 160 100" aria-hidden="true">
+    <path pathLength="1" d="M44 12c-14 0-14 6-14 16v8c0 8-6 14-14 14 8 0 14 6 14 14v8c0 10 0 16 14 16"/>
+    <path pathLength="1" d="M116 12c14 0 14 6 14 16v8c0 8 6 14 14 14-8 0-14 6-14 14v8c0 10 0 16-14 16"/>
+    <path pathLength="1" d="M62 50h36M80 34v32"/>
+    <circle cx="62" cy="50" r="6"/><circle cx="98" cy="50" r="6"/><circle cx="80" cy="34" r="6"/><circle cx="80" cy="66" r="6"/>
+  </svg>
+</header>
+<main class="app">
+  <section class="left" aria-label="Build your markup">
+    <nav id="types" aria-label="Schema type"></nav>
+    <form id="form" class="panel" novalidate aria-label="Schema details"></form>
+  </section>
+  <aside class="right panel" aria-label="Output">
+    <div class="score">
+      <svg class="ring" viewBox="0 0 100 100" role="img" aria-label="Completeness score">
+        <circle class="bg" cx="50" cy="50" r="42"/><circle class="fg" id="ring" cx="50" cy="50" r="42"/>
+        <text id="sc-n" x="50" y="50">0</text>
+      </svg>
+      <div><h2 id="sc-t">Start filling in the form</h2><p id="sc-s"></p></div>
+    </div>
+    <div class="segs" role="tablist" aria-label="Output view">
+      <button class="seg" role="tab" id="t-code" aria-selected="true" aria-controls="p-code">JSON-LD</button>
+      <button class="seg" role="tab" id="t-prev" aria-selected="false" aria-controls="p-prev">Search preview</button>
+    </div>
+    <div id="p-code" role="tabpanel" aria-labelledby="t-code">
+      <pre class="code" tabindex="0" aria-label="Generated JSON-LD"><code id="code"></code></pre>
+      <div class="bar">
+        <button type="button" class="btn pri" id="copy">Copy</button>
+        <label class="chk"><input type="checkbox" id="wrap" checked> Wrap in script tag</label>
+        <button type="button" class="btn" id="reset">Reset form</button>
+      </div>
+    </div>
+    <div id="p-prev" role="tabpanel" aria-labelledby="t-prev" hidden></div>
+    <ul id="issues" aria-label="Checks"></ul>
+    <p class="links">Then verify it with <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">Google’s Rich Results Test</a> or the <a href="https://validator.schema.org/" target="_blank" rel="noopener">Schema.org validator</a>.</p>
+  </aside>
+</main>
+<div id="live" class="sr" aria-live="polite"></div>
+<footer>MIT licensed · <a href="https://github.com/shayaneali/schema-markup-generator">Source on GitHub</a></footer>
+<script src="js/app.js"></script>
+</body>
+</html>
